@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+ <title>Landing Page - هميزات مليكة</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+   <h1><b>  هميزات مليكة </b></h1> <br> 🔥 عروض مميزة على منتجات AliExpress     </h1>
+    <p>اطلب الآن قبل انتهاء العروض!</p>
+</header>
+
+<section class="products-container">
+
+    <!-- المنتج 1 -->
+    <div class="product-card product1">
+        <a href="https://s.click.aliexpress.com/e/_c3koYo8z" target="_blank">
+            <img src="https://ae01.alicdn.com/kf/S7d2b6dcb31aa48b881fa3ac86842695bf.jpg" alt="TOSUOD Winter Gloves">
+        </a>
+        <h3>TOSUOD Winter Gloves - قفازات شتوية للركض والدرّاجات</h3>
+        <p class="rating">⭐ 4.1 | 2000+ مبيعات | البائع: TOSUOD Flagship Store</p>
+        <p class="price">MAD62.90 <span class="old">MAD297.93</span></p>
+        <p class="discount">New shoppers save MAD235.03</p>
+        <div class="options">
+            <p>اللون: أسود</p>
+            <p>المقاسات: M, L</p>
+        </div>
+        <div class="timer" id="timer1"></div>
+        <a class="btn floating-btn btn1" href="https://s.click.aliexpress.com/e/_c3koYo8z" target="_blank">🔥 اشترِ الآن</a>
+    </div>
+
+    <!-- المنتج 2 -->
+    <div class="product-card product2">
+        <a href="https://s.click.aliexpress.com/e/_c3ZHldI5" target="_blank">
+            <img src="https://ae01.alicdn.com/kf/Sd6fa792e5e0d45b98137d44455ae6fd0m.jpg" alt="Face Mask">
+        </a>
+        <h3>Face Mask Riding Neck Gaiter Balaclava Ski Motorcycle Running Winter UV Protection</h3>
+        <p class="rating">⭐ 4.7 | 99 Reviews | 800+ sold</p>
+        <p class="price">MAD21.41 <span class="old">MAD47.49</span></p>
+        <p class="discount">New shoppers save MAD26.08</p>
+        <div class="options">
+            <p>اللون: أسود</p>
+            <p>المقاس: واحد</p>
+        </div>
+        <div class="timer" id="timer2"></div>
+        <a class="btn floating-btn btn2" href="https://s.click.aliexpress.com/e/_c3ZHldI5" target="_blank">🔥 اشترِ الآن</a>
+    </div>
+
+    <!-- المنتج 3 -->
+    <div class="product-card product3">
+        <a href="https://s.click.aliexpress.com/e/_c3xwK6bT" target="_blank">
+            <img src="https://ae01.alicdn.com/kf/S1b82a202a26c4a498da5817d63748115G.jpg" alt="Motocross Jacket">
+        </a>
+        <h3>Motocross Jacket Men Body Armor Motorcycle Armor Wear-Resistant Anti-Drop Bicycle Racing Jacket Riding Motorbike Moto Protection</h3>
+        <p class="rating">⭐ 4.6 | 346 Reviews | 1000+ sold</p>
+        <p class="price">MAD333.86 <span class="old">MAD710.00</span></p>
+        <p class="discount">Save MAD376.14</p>
+        <div class="options">
+            <p>اللون: أسود</p>
+            <p>المقاسات: M, L, XL</p>
+        </div>
+        <div class="timer" id="timer3"></div>
+        <a class="btn floating-btn btn3" href="https://s.click.aliexpress.com/e/_c3xwK6bT" target="_blank">🔥 اشترِ الآن</a>
+    </div>
+
+</section>
+
+<!-- AliExpress Commitment Section -->
+<section class="commit">
+    <h3>ضمانات AliExpress – هميزات مليكة</h3>
+    <div class="commit-box">
+        <p><strong>🚚 شحن مجاني:</strong> مجانا للطلبات فوق MAD100.32</p>
+        <p><strong>📦 التوصيل المتوقع:</strong> من 13 إلى 18 دجنبر</p>
+    </div>
+    <div class="commit-box">
+        <p><strong>↩ سياسة الإرجاع والاسترجاع:</strong> يمكنك استرجاع المنتج أو طلب تعويض في حالة وجود أي مشكل.</p>
+        <p><strong>🔒 الأمان والخصوصية:</strong> بياناتك محمية وعمليات الشراء آمنة 100%.</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 - هميزات مليكة</p>
+</footer>
+
+<script>
+// إنشاء Timer لكل منتج (3 أيام من الآن)
+function startTimer(elementId){
+    let countdownDate = new Date();
+    countdownDate.setDate(countdownDate.getDate() + 3);
+
+    let x = setInterval(function() {
+        let now = new Date().getTime();
+        let distance = countdownDate - now;
+
+        let days = Math.floor(distance / (1000*60*60*24));
+        let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+        let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+        let seconds = Math.floor((distance % (1000*60)) / 1000);
+
+        document.getElementById(elementId).innerHTML =
+            `⏳ ${days.toString().padStart(2,'0')} أيام 
+             ${hours.toString().padStart(2,'0')} ساعات 
+             ${minutes.toString().padStart(2,'0')} دقائق 
+             ${seconds.toString().padStart(2,'0')} ثواني`;
+
+        if(distance < 0){
+            clearInterval(x);
+            document.getElementById(elementId).innerHTML = "⚡ انتهت العروض!";
+        }
+    }, 1000);
+}
+
+startTimer("timer1");
+startTimer("timer2");
+startTimer("timer3");
+</script>
+
+</body>
+</html>
+
+
+
